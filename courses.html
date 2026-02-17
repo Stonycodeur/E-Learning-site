@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VICE PRO MOTIVATION : Cours en ligne</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="creation/logo vice pro motivation.jpeg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .certificat-container {
+            display: none; /* Masquer initialement */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+        .certificat-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .certificat-container:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .overlay {
+            display: none; /* Masquer initialement */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+        
+        .course-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .image img {
+            max-width: 100%; /* Réduire la taille des images */
+            border-radius: 8px;
+        }
+        
+        .image {
+            height: 200px; /* Hauteur fixe pour uniformiser les images */
+            overflow: hidden;
+        }
+
+        .course-item h5 {
+            color: #343a40;
+        }
+
+        .course-item .text-primary a {
+            color: #0d6efd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="creation/logo vice pro motivation.jpeg" alt="" height="50px">VICE PRO <span style="color: #fb873f;">MOTIVATION</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Accueil</a>
+                <a href="about.html" class="nav-item nav-link">À propos</a>
+                <a href="courses.html" class="nav-item nav-link">Formations</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Notre équipe</a>
+                        <a href="testimonial.html" class="dropdown-item">Témoignages</a>
+                        <a href="videos.html" class="dropdown-item">Vidéos</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Formations</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Accueil</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Formations</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="container">
+        <div class="row g-4 py-2">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Management Stratégiques des équipes.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1"><a href="single.html" class="text-dark">Management Stratégiques des équipes : Bien gérer son entreprise</a></h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.8L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"> <a href="signup.html?formation=management_strategiques">Cliquez ici pour s'inscrire</a>
+                            <i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Leadership du Manager.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Leadership du Manager </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>3.5</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.1L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=leadership_manager">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Management et leadership pour secrétaire et assistante de direction.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Management et leadership pour secrétaire et assistante de direction</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>5</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.5L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=management_leadership_secretaire">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Elaboration d’un Business Plan.png" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Elaboration d’un Business Plan/ Plan de développement</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.2L+ Apprenantes</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=business_plan">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Management des projets Gestion des parties prenantes et la matrice RACI.png" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Management des projets : Gestion des parties prenantes et la matrice RACI</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=management_projets">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/La Gestion des Opérations.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Gestion des Opérations</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.5L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=gestion_operations">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/La gestion du temps pour un Management réussi.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Gestion du temps pour un Management réussi</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+ Learners</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=gestion_temps">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Gestion des conflits et leadership.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Gestion des conflits et leadership</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.5L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=gestion_conflits_leadership">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Développement personnel et professionnel des équipes.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Développement personnel et professionnel des équipes</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.1L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=developpement_personnel_professionnel">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Animer et motiver ses collaborateurs.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Animer et motiver ses collaborateurs</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>5</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=animer_motiver_collaborateurs">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Suivi et Evaluation des activités.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Suivi et Evaluation des activités</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=suivi_evaluation_activites">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Planification stratégique.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Planification stratégique</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>5.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.4L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=planification_strategique">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Construire et développer un  leadership offensif.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Construire et développer un  leadership offensif</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>3.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.5L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=developper_leadership_offensif">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Acquérir les techniques du leadership offensif pour son équipe.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Acquérir les techniques du leadership offensif pour son équipe</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>5.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4s.2L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=techniques_leadership_offensif">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Management des risques de projets.jpeg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Management des risques de projets</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.1L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=management_risques_projets">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="creation/Plan de communication Externe.png" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;" class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1">Plan de communication Externe</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>3.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.3L+ Apprenantes</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="signup.html?formation=plan_communication_externe">Cliquez ici pour s'inscrire</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="container text-center">
+        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="#" onclick="showCertificat()">Voir un certificat...</a>
+    </div>
+    <div class="overlay" id="overlay" onclick="hideCertificat()"></div>
+    <div class="certificat-container" id="certificatContainer">
+        <img src="creation/certif1.jpeg" alt="Certificat" class="certificat">
+    </div>
+
+
+    
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        function showCertificat() {
+            document.getElementById('certificatContainer').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hideCertificat() {
+            document.getElementById('certificatContainer').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
